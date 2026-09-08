@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"ru.nsu.skovalev4.Task_1_1_1","c":"Sort","l":"Sort()","u":"%3Cinit%3E()"},{"p":"ru.nsu.skovalev4.Task_1_1_1","c":"Sort","l":"sort(int[])"}];updateSearchResults();
