@@ -55,8 +55,4 @@ class HeapSortTest {
 
         assertArrayEquals(new int[]{-421, -124, -7, -1, 0}, array);
     }
-
-    @Test
-    void heapify() {
-    }
 }

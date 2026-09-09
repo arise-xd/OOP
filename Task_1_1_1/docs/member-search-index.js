@@ -1,1 +1,0 @@
-memberSearchIndex = [{"p":"ru.nsu.skovalev4.sort","c":"HeapSort","l":"HeapSort()","u":"%3Cinit%3E()"},{"p":"ru.nsu.skovalev4.sort","c":"Main","l":"Main()","u":"%3Cinit%3E()"},{"p":"ru.nsu.skovalev4.sort","c":"Main","l":"main(String[])","u":"main(java.lang.String[])"},{"p":"ru.nsu.skovalev4.sort","c":"HeapSort","l":"sort(int[])"}];updateSearchResults();

@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"ru.nsu.skovalev4.sort","l":"HeapSort"},{"p":"ru.nsu.skovalev4.sort","l":"Main"}];updateSearchResults();
