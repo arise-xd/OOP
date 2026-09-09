@@ -1,8 +1,8 @@
 package ru.nsu.skovalev4.sort;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+
+import org.junit.jupiter.api.Test;
 
 class HeapSortTest {
 
