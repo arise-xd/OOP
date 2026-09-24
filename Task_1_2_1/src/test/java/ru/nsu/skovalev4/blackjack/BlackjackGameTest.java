@@ -153,6 +153,7 @@ class BlackjackGameTest {
         assertSame(hitCard, game.getDealerHand().getCard(1));
     }
 
+    @Test
     void handsResetWhenNewRoundStarts() {
         BlackjackGame game = new BlackjackGame();
 
