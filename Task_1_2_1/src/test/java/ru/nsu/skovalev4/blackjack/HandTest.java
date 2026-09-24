@@ -60,7 +60,7 @@ class HandTest {
     }
 
     @Test
-    void calculateCardCountInHand() {
+    void calculateCardsCountInHand() {
         Hand hand = new Hand();
         assertEquals(0, hand.getCardCount());
         hand.addCard(new Card(Suit.SPADES, Rank.KING));
