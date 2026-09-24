@@ -18,9 +18,9 @@ public class Dealer {
     }
 
     /**
-     * Check if the dealer should hit.
+     * Checks whether the dealer should take another card.
      *
-     * @return true if dealer's score is less than the minimum score
+     * @return true if the dealer's score is less than 17
      */
     public boolean shouldHit() {
 
@@ -28,16 +28,4 @@ public class Dealer {
 
     }
 
-    /**
-     * Plays the dealer's turn.
-     *
-     * @param deck deck from which the dealer draws cards
-     */
-    public void playTurn(Deck deck) {
-
-        while (shouldHit()) {
-            hand.addCard(deck.getCard());
-        }
-
-    }
 }

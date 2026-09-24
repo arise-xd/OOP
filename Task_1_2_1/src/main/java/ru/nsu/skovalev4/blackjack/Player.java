@@ -7,7 +7,7 @@ public class Player {
     private final Hand hand = new Hand();
 
     /**
-     * Returns the player's hand
+     * Returns the player's hand.
      *
      * @return player's hand
      */

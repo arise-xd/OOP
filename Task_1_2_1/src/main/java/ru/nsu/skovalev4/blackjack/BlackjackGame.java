@@ -10,14 +10,14 @@ public class BlackjackGame {
     private final Dealer dealer = new Dealer();
 
     /**
-     * Initial shuffling the deck.
+     * Creates a blackjack game and shuffles the deck.
      */
     public BlackjackGame() {
         deck.shuffleDeck();
     }
 
     /**
-     * Initial deal cards to player and dealer.
+     * Deals two initial cards to the player and the dealer.
      */
     public void dealInitialCards() {
 
@@ -30,17 +30,34 @@ public class BlackjackGame {
     }
 
     /**
-     * Gives one card to the player.
+     * Deals one card to the player.
+     *
+     * @return card dealt to the player
      */
-    public void playerHit() {
-        player.getHand().addCard(deck.getCard());
+    public Card playerHit() {
+        Card card = deck.getCard();
+        player.getHand().addCard(card);
+        return card;
     }
 
     /**
-     * Plays the dealer's turn.
+     * Checks whether the dealer should take another card.
+     *
+     * @return true if the dealer should take another card
      */
-    public void playDealerTurn() {
-        dealer.playTurn(deck);
+    public boolean shouldDealerHit() {
+        return dealer.shouldHit();
+    }
+
+    /**
+     * Deals one card to the dealer.
+     *
+     * @return card dealt to the dealer
+     */
+    public Card dealerHit() {
+        Card card = deck.getCard();
+        dealer.getHand().addCard(card);
+        return card;
     }
 
     /**
@@ -72,5 +89,33 @@ public class BlackjackGame {
         }
 
         return GameResult.DRAW;
+    }
+
+    /**
+     * Returns the player's hand.
+     *
+     * @return player's hand
+     */
+    public Hand getPlayerHand() {
+        return player.getHand();
+    }
+
+    /**
+     * Returns the dealer's hand.
+     *
+     * @return dealer's hand
+     */
+    public Hand getDealerHand() {
+        return dealer.getHand();
+    }
+
+    /**
+     * Starts a new round.
+     */
+    public void startNewRound() {
+        player.getHand().clear();
+        dealer.getHand().clear();
+        deck.reset();
+        dealInitialCards();
     }
 }

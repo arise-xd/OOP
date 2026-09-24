@@ -4,8 +4,8 @@ package ru.nsu.skovalev4.blackjack;
  * Represents a playing card.
  */
 public class Card {
-    private Suit suit;
-    private Rank rank;
+    private final Suit suit;
+    private final Rank rank;
 
     /**
      * Creates a card with the specified suit and rank.
@@ -37,12 +37,12 @@ public class Card {
     }
 
     /**
-     * Makes readable card rank and suit.
+     * Returns a readable representation of the card.
      *
-     * @return
+     * @return readable representation of the card
      */
-    public String toString(){
-        return rank + " of " + suit + "S";
+    @Override
+    public String toString() {
+        return rank + " of " + suit;
     }
-
 }

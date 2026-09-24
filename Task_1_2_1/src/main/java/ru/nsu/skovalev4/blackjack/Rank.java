@@ -1,7 +1,7 @@
 package ru.nsu.skovalev4.blackjack;
 
 /**
- * Represents the rank of a standard playing card deck.
+ * Represents a rank in a standard playing card deck.
  */
 public enum Rank {
     TWO(2),
