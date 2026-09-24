@@ -1,6 +1,8 @@
 package ru.nsu.skovalev4.blackjack;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertSame;
 
 import org.junit.jupiter.api.Test;
@@ -169,5 +171,19 @@ class BlackjackGameTest {
 
         assertEquals(2, game.getDealerHand().getCardCount());
         assertEquals(2, game.getPlayerHand().getCardCount());
+    }
+
+    @Test
+    void shouldDealerHit() {
+        BlackjackGame game = new BlackjackGame();
+
+        game.getDealerHand().addCard(new Card(Suit.CLUBS, Rank.TEN));
+        game.getDealerHand().addCard(new Card(Suit.DIAMONDS, Rank.SIX));
+
+        assertTrue(game.shouldDealerHit());
+
+        game.getDealerHand().addCard(new Card(Suit.DIAMONDS, Rank.ACE));
+
+        assertFalse(game.shouldDealerHit());
     }
 }
