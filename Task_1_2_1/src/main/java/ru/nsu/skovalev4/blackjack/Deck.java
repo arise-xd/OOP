@@ -30,7 +30,7 @@ public class Deck {
      * @return drawn card
      */
     public Card getCard() {
-        return cards.removeLast();
+        return cards.remove(cards.size() - 1);
     }
 
     private void fillDeck() {
