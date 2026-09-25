@@ -375,7 +375,6 @@ class BlackjackControllerTest {
             secondRoundDealerFirstCard,
             secondRoundDealerSecondCard
         );
-
         BlackjackGame game = new BlackjackGame(deck);
         ConsoleView view = mock(ConsoleView.class);
         Scanner scanner = new Scanner("0\n0\n");
