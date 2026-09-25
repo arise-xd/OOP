@@ -78,7 +78,7 @@ class ConsoleViewTest {
         String expected = "Your turn"
             + System.lineSeparator()
             + "-----"
-            +System.lineSeparator();
+            + System.lineSeparator();
 
         assertEquals(expected, output.toString());
     }
@@ -94,6 +94,14 @@ class ConsoleViewTest {
 
     @Test
     void showInvalidInput() {
+        view.showInvalidInput();
+
+        String expected = "Invalid input."
+            + System.lineSeparator()
+            + "Expected '1' to draw a card or '0' to stand..."
+            + System.lineSeparator();
+
+        assertEquals(expected, output.toString());
     }
 
     @Test
