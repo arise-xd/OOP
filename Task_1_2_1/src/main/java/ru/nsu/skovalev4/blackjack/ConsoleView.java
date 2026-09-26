@@ -181,7 +181,8 @@ public class ConsoleView {
             if (i == hand.getCardCount() - 1) {
                 System.out.print(hand.getCard(i).toString() + " (" + hand.getCardValue(i) + ")");
             } else {
-                System.out.print(hand.getCard(i).toString() + " (" + hand.getCardValue(i) + ")" + ", ");
+                System.out.print(hand.getCard(i).toString() + " ("
+                    + hand.getCardValue(i) + ")" + ", ");
             }
         }
     }
