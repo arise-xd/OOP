@@ -5,15 +5,25 @@ package ru.nsu.skovalev4.blackjack;
  */
 public class BlackjackGame {
 
-    private final Deck deck = new Deck();
+    private final Deck deck;
     private final Player player = new Player();
     private final Dealer dealer = new Dealer();
 
     /**
-     * Creates a blackjack game and shuffles the deck.
+     * Creates a blackjack game with a standard shuffled deck.
      */
     public BlackjackGame() {
+        this(new Deck());
         deck.shuffleDeck();
+    }
+
+    /**
+     * Creates a blackjack game with the specified deck.
+     *
+     * @param deck deck used in the game
+     */
+    BlackjackGame(Deck deck) {
+        this.deck = deck;
     }
 
     /**

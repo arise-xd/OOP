@@ -40,7 +40,7 @@ public class BlackjackController {
         }
     }
 
-    private void playRound() {
+    void playRound() {
         roundNumber++;
         view.showRoundNumber(roundNumber);
         game.startNewRound();
