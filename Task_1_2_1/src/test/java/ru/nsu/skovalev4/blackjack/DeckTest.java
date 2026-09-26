@@ -1,12 +1,12 @@
 package ru.nsu.skovalev4.blackjack;
 
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import org.junit.jupiter.api.Test;
 import java.util.HashSet;
 import java.util.Set;
+import org.junit.jupiter.api.Test;
+
 
 
 class DeckTest {

@@ -127,7 +127,7 @@ class ConsoleViewTest {
         String expected = "Dealer's turn"
             + System.lineSeparator()
             + "-----"
-            +System.lineSeparator();
+            + System.lineSeparator();
 
         assertEquals(expected, output.toString());
     }
@@ -171,7 +171,8 @@ class ConsoleViewTest {
         game.getDealerHand().addCard(new Card(Suit.HEARTS, Rank.ACE));
 
         view.showFullHands(game.getPlayerHand(), game.getDealerHand());
-        String expected = "  Your cards: EIGHT of SPADES (8), SIX of CLUBS (6), NINE of DIAMONDS (9) => 23"
+        String expected = "  Your cards: EIGHT of SPADES (8), SIX of CLUBS (6), "
+            + "NINE of DIAMONDS (9) => 23"
             + System.lineSeparator()
             + "  Dealer's cards: TWO of DIAMONDS (2), ACE of HEARTS (11) => 13"
             + System.lineSeparator();

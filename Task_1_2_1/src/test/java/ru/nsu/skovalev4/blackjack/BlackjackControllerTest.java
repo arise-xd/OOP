@@ -1,9 +1,9 @@
 package ru.nsu.skovalev4.blackjack;
 
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-import static org.mockito.Mockito.times;
 
 import java.util.Scanner;
 import org.junit.jupiter.api.Test;
