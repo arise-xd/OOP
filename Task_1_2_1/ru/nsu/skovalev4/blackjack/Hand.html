@@ -107,12 +107,12 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addCard(ru.nsu.skovalev4.blackjack.Card)" class="member-name-link">addCard</a><wbr>(<a href="Card.html" title="class in ru.nsu.skovalev4.blackjack">Card</a>&nbsp;card)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Adds a card to the hand.</div>
+<div class="block">Adds a card to the hand and updates the score.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#clear()" class="member-name-link">clear</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Clears all cards from the hand.</div>
+<div class="block">Clears all cards and calculated values from the hand.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Card.html" title="class in ru.nsu.skovalev4.blackjack">Card</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCard(int)" class="member-name-link">getCard</a><wbr>(int&nbsp;index)</code></div>
@@ -127,7 +127,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCardValue(int)" class="member-name-link">getCardValue</a><wbr>(int&nbsp;index)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns the value of the card at the specified index.</div>
+<div class="block">Returns the current value of the card at the specified index.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getScore()" class="member-name-link">getScore</a>()</code></div>
@@ -179,7 +179,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="addCard(ru.nsu.skovalev4.blackjack.Card)">
 <h3>addCard</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addCard</span><wbr><span class="parameters">(<a href="Card.html" title="class in ru.nsu.skovalev4.blackjack">Card</a>&nbsp;card)</span></div>
-<div class="block">Adds a card to the hand.</div>
+<div class="block">Adds a card to the hand and updates the score.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>card</code> - card to add</dd>
@@ -247,19 +247,19 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="clear()">
 <h3>clear</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">clear</span>()</div>
-<div class="block">Clears all cards from the hand.</div>
+<div class="block">Clears all cards and calculated values from the hand.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="getCardValue(int)">
 <h3>getCardValue</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getCardValue</span><wbr><span class="parameters">(int&nbsp;index)</span></div>
-<div class="block">Returns the value of the card at the specified index.</div>
+<div class="block">Returns the current value of the card at the specified index.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>index</code> - index of the required card</dd>
 <dt>Returns:</dt>
-<dd>value of the required card</dd>
+<dd>current value of the required card</dd>
 </dl>
 </section>
 </li>
