@@ -8,14 +8,28 @@ import java.util.List;
  */
 public class Hand {
     private final List<Card> cards = new ArrayList<>();
+    private final List<Integer> aceIndexes = new ArrayList<>();
+
+    private int score = 0;
+    private int reducedAces = 0;
 
     /**
-     * Adds a card to the hand.
+     * Adds a card to the hand and updates the score.
      *
      * @param card card to add
      */
     public void addCard(Card card) {
         cards.add(card);
+        score += card.getRank().getValue();
+
+        if (card.getRank() == Rank.ACE) {
+            aceIndexes.add(cards.size() - 1);
+        }
+
+        while (score > 21 && reducedAces < aceIndexes.size()) {
+            score -= 10;
+            reducedAces++;
+        }
     }
 
     /**
@@ -24,21 +38,6 @@ public class Hand {
      * @return score of the hand
      */
     public int getScore() {
-
-        int score = 0;
-        int aces = 0;
-        for (Card card : cards) {
-            score += card.getRank().getValue();
-            if (card.getRank() == Rank.ACE) {
-                aces++;
-            }
-        }
-
-        while (aces > 0 && score > 21) {
-            score -= 10;
-            aces--;
-        }
-
         return score;
     }
 
@@ -48,10 +47,7 @@ public class Hand {
      * @return true if the hand is bust
      */
     public boolean isBust() {
-
-        int score = getScore();
-
-        return (score > 21);
+        return score > 21;
     }
 
     /**
@@ -60,11 +56,7 @@ public class Hand {
      * @return true if the hand is a blackjack
      */
     public boolean isBlackjack() {
-
-        int score = getScore();
-        int size = cards.size();
-
-        return (size == 2 && score == 21);
+        return cards.size() == 2 && score == 21;
     }
 
     /**
@@ -87,54 +79,35 @@ public class Hand {
     }
 
     /**
-     * Clears all cards from the hand.
+     * Clears all cards and calculated values from the hand.
      */
     public void clear() {
         cards.clear();
+        aceIndexes.clear();
+        score = 0;
+        reducedAces = 0;
     }
 
     /**
-     * Returns the value of the card at the specified index.
+     * Returns the current value of the card at the specified index.
      *
      * @param index index of the required card
-     * @return value of the required card
+     * @return current value of the required card
      */
     public int getCardValue(int index) {
-        if (cards.get(index).getRank() != Rank.ACE) {
-            return cards.get(index).getRank().getValue();
-        } else {
-            int reducedAces = getReducedAceCount();
-            int aces = 0;
-            for (int i = 0; i <= index; i++) {
-                if (cards.get(i).getRank() == Rank.ACE) {
-                    aces++;
-                }
-            }
-            if (aces <= reducedAces) {
+        Card card = cards.get(index);
+
+        if (card.getRank() != Rank.ACE) {
+            return card.getRank().getValue();
+        }
+
+        if (reducedAces > 0) {
+            int lastReducedAceIndex = aceIndexes.get(reducedAces - 1);
+            if (index <= lastReducedAceIndex) {
                 return 1;
-            } else {
-                return 11;
             }
         }
-    }
 
-    private int getReducedAceCount() {
-
-        int currentScore = 0;
-        int aces = 0;
-        int reducedAces = 0;
-        for (Card card : cards) {
-            currentScore += card.getRank().getValue();
-            if (card.getRank() == Rank.ACE) {
-                aces++;
-            }
-        }
-        while (currentScore > 21 && aces > 0) {
-            currentScore -= 10;
-            aces--;
-            reducedAces++;
-        }
-
-        return reducedAces;
+        return Rank.ACE.getValue();
     }
 }
