@@ -5,7 +5,7 @@
 <title>Mul (Task_1_1_3 1.0-SNAPSHOT API)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="description" content="declaration: package: ru.nsu.skovalev4.Task_1_1_3, class: Mul">
+<meta name="description" content="declaration: package: ru.nsu.skovalev4.expression, class: Mul">
 <meta name="generator" content="javadoc/ClassWriterImpl">
 <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
 <link rel="stylesheet" type="text/css" href="../../../../script-dir/jquery-ui.min.css" title="Style">
@@ -66,18 +66,19 @@ loadScripts(document, 'script');</script>
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">ru.nsu.skovalev4.Task_1_1_3</a></div>
+<div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">ru.nsu.skovalev4.expression</a></div>
 <h1 title="Class Mul" class="title">Class Mul</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
-<div class="inheritance"><a href="Expression.html" title="class in ru.nsu.skovalev4.Task_1_1_3">ru.nsu.skovalev4.Task_1_1_3.Expression</a>
-<div class="inheritance">ru.nsu.skovalev4.Task_1_1_3.Mul</div>
+<div class="inheritance"><a href="Expression.html" title="class in ru.nsu.skovalev4.expression">ru.nsu.skovalev4.expression.Expression</a>
+<div class="inheritance">ru.nsu.skovalev4.expression.Mul</div>
 </div>
 </div>
 <section class="class-description" id="class-description">
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Mul</span>
-<span class="extends-implements">extends <a href="Expression.html" title="class in ru.nsu.skovalev4.Task_1_1_3">Expression</a></span></div>
+<span class="extends-implements">extends <a href="Expression.html" title="class in ru.nsu.skovalev4.expression">Expression</a></span></div>
+<div class="block">Represents the product of two expressions.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -89,9 +90,11 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(ru.nsu.skovalev4.Task_1_1_3.Expression,ru.nsu.skovalev4.Task_1_1_3.Expression)" class="member-name-link">Mul</a><wbr>(<a href="Expression.html" title="class in ru.nsu.skovalev4.Task_1_1_3">Expression</a>&nbsp;left,
- <a href="Expression.html" title="class in ru.nsu.skovalev4.Task_1_1_3">Expression</a>&nbsp;right)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(ru.nsu.skovalev4.expression.Expression,ru.nsu.skovalev4.expression.Expression)" class="member-name-link">Mul</a><wbr>(<a href="Expression.html" title="class in ru.nsu.skovalev4.expression">Expression</a>&nbsp;left,
+ <a href="Expression.html" title="class in ru.nsu.skovalev4.expression">Expression</a>&nbsp;right)</code></div>
+<div class="col-last even-row-color">
+<div class="block">Creates a product of two expressions.</div>
+</div>
 </div>
 </section>
 </li>
@@ -106,15 +109,21 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Expression.html" title="class in ru.nsu.skovalev4.Task_1_1_3">Expression</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Expression.html" title="class in ru.nsu.skovalev4.expression">Expression</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#derivative(java.lang.String)" class="member-name-link">derivative</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;variable)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Creates the derivative of the product.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#eval(java.lang.String)" class="member-name-link">eval</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;assignments)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Evaluates the product.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#print()" class="member-name-link">print</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Prints the product to the console.</div>
+</div>
 </div>
 </div>
 </div>
@@ -133,10 +142,16 @@ loadScripts(document, 'script');</script>
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(ru.nsu.skovalev4.Task_1_1_3.Expression,ru.nsu.skovalev4.Task_1_1_3.Expression)">
+<section class="detail" id="&lt;init&gt;(ru.nsu.skovalev4.expression.Expression,ru.nsu.skovalev4.expression.Expression)">
 <h3>Mul</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Mul</span><wbr><span class="parameters">(<a href="Expression.html" title="class in ru.nsu.skovalev4.Task_1_1_3">Expression</a>&nbsp;left,
- <a href="Expression.html" title="class in ru.nsu.skovalev4.Task_1_1_3">Expression</a>&nbsp;right)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Mul</span><wbr><span class="parameters">(<a href="Expression.html" title="class in ru.nsu.skovalev4.expression">Expression</a>&nbsp;left,
+ <a href="Expression.html" title="class in ru.nsu.skovalev4.expression">Expression</a>&nbsp;right)</span></div>
+<div class="block">Creates a product of two expressions.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>left</code> - left expression</dd>
+<dd><code>right</code> - right expression</dd>
+</dl>
 </section>
 </li>
 </ul>
@@ -151,19 +166,25 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="print()">
 <h3>print</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">print</span>()</div>
+<div class="block">Prints the product to the console.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="Expression.html#print()">print</a></code>&nbsp;in class&nbsp;<code><a href="Expression.html" title="class in ru.nsu.skovalev4.Task_1_1_3">Expression</a></code></dd>
+<dd><code><a href="Expression.html#print()">print</a></code>&nbsp;in class&nbsp;<code><a href="Expression.html" title="class in ru.nsu.skovalev4.expression">Expression</a></code></dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="derivative(java.lang.String)">
 <h3>derivative</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Expression.html" title="class in ru.nsu.skovalev4.Task_1_1_3">Expression</a></span>&nbsp;<span class="element-name">derivative</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;variable)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Expression.html" title="class in ru.nsu.skovalev4.expression">Expression</a></span>&nbsp;<span class="element-name">derivative</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;variable)</span></div>
+<div class="block">Creates the derivative of the product.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="Expression.html#derivative(java.lang.String)">derivative</a></code>&nbsp;in class&nbsp;<code><a href="Expression.html" title="class in ru.nsu.skovalev4.Task_1_1_3">Expression</a></code></dd>
+<dd><code><a href="Expression.html#derivative(java.lang.String)">derivative</a></code>&nbsp;in class&nbsp;<code><a href="Expression.html" title="class in ru.nsu.skovalev4.expression">Expression</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>variable</code> - variable used for differentiation</dd>
+<dt>Returns:</dt>
+<dd>derivative of the product</dd>
 </dl>
 </section>
 </li>
@@ -171,9 +192,14 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="eval(java.lang.String)">
 <h3>eval</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">eval</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;assignments)</span></div>
+<div class="block">Evaluates the product.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="Expression.html#eval(java.lang.String)">eval</a></code>&nbsp;in class&nbsp;<code><a href="Expression.html" title="class in ru.nsu.skovalev4.Task_1_1_3">Expression</a></code></dd>
+<dd><code><a href="Expression.html#eval(java.lang.String)">eval</a></code>&nbsp;in class&nbsp;<code><a href="Expression.html" title="class in ru.nsu.skovalev4.expression">Expression</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>assignments</code> - variable values</dd>
+<dt>Returns:</dt>
+<dd>value of the product</dd>
 </dl>
 </section>
 </li>
