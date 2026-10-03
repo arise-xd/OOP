@@ -1,4 +1,4 @@
-package ru.nsu.skovalev4.Task_1_1_3;
+package ru.nsu.skovalev4.expression;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
