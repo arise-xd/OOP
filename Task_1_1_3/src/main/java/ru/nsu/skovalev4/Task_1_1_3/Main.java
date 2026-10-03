@@ -1,4 +1,4 @@
-package ru.nsu.skovalev4.Task_1_3_1;
+package ru.nsu.skovalev4.Task_1_1_3;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
