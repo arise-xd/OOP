@@ -27,6 +27,8 @@ class MulTest {
     void printsMultiplication() {
         Mul mul = new Mul(new Number(3), new Variable("x"));
 
+        assertEquals("(3*x)", mul.toString());
+
         mul.print();
 
         assertEquals("(3*x)", output.toString());
@@ -38,6 +40,8 @@ class MulTest {
             new Mul(new Number(3), new Variable("x")),
             new Number(7)
         );
+
+        assertEquals("((3*x)*7)", mul.toString());
 
         mul.print();
 
@@ -56,6 +60,8 @@ class MulTest {
     @Test
     void differentiatesMultiplication() {
         Mul mul = new Mul(new Variable("x"), new Variable("x"));
+
+        assertEquals("(x*x)", mul.toString());
 
         Expression derivativeResult = mul.derivative("x");
 

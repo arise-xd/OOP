@@ -27,6 +27,8 @@ class SubTest {
     void printsSubtraction() {
         Sub sub = new Sub(new Number(3), new Variable("x"));
 
+        assertEquals("(3-x)", sub.toString());
+
         sub.print();
 
         assertEquals("(3-x)", output.toString());
@@ -38,6 +40,8 @@ class SubTest {
             new Sub(new Number(3), new Variable("x")),
             new Number(7)
         );
+
+        assertEquals("((3-x)-7)", sub.toString());
 
         sub.print();
 
@@ -56,6 +60,8 @@ class SubTest {
     @Test
     void differentiatesSubtraction() {
         Sub sub = new Sub(new Variable("x"), new Variable("x"));
+
+        assertEquals("(x-x)", sub.toString());
 
         Expression derivativeResult = sub.derivative("x");
 

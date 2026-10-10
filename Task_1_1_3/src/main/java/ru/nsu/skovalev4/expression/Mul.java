@@ -1,5 +1,7 @@
 package ru.nsu.skovalev4.expression;
 
+import java.util.Map;
+
 /**
  * Represents the product of two expressions.
  */
@@ -20,15 +22,18 @@ public class Mul extends Expression {
     }
 
     /**
-     * Prints the product to the console.
+     * Returns the product as a string.
+     *
+     * @return string representation of the product
      */
     @Override
-    public void print() {
-        System.out.print("(");
-        left.print();
-        System.out.print("*");
-        right.print();
-        System.out.print(")");
+    public String toString() {
+        String result = '('
+            + left.toString()
+            + '*'
+            + right.toString()
+            + ')';
+        return result;
     }
 
     /**
@@ -48,11 +53,11 @@ public class Mul extends Expression {
     /**
      * Evaluates the product.
      *
-     * @param assignments variable values
+     * @param variables variable values
      * @return value of the product
      */
     @Override
-    public int eval(String assignments) {
-        return left.eval(assignments) * right.eval(assignments);
+    protected int eval(Map<String, Integer> variables) {
+        return left.eval(variables) * right.eval(variables);
     }
 }

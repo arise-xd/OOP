@@ -1,5 +1,7 @@
 package ru.nsu.skovalev4.expression;
 
+import java.util.Map;
+
 /**
  * Represents a variable in an expression.
  */
@@ -17,11 +19,13 @@ public class Variable extends Expression {
     }
 
     /**
-     * Prints the variable name to the console.
+     * Returns the variable name as a string.
+     *
+     * @return string representation of the variable
      */
     @Override
-    public void print() {
-        System.out.print(name);
+    public String toString() {
+        return name;
     }
 
     /**
@@ -42,23 +46,14 @@ public class Variable extends Expression {
     /**
      * Finds and returns the value assigned to the variable.
      *
-     * @param assignments variable values
+     * @param variables variable values
      * @return value assigned to this variable
      * @throws IllegalArgumentException if the variable has no assigned value
      */
     @Override
-    public int eval(String assignments) {
-        String[] assignmentParts = assignments.split(";");
-
-        for (String assignmentPart : assignmentParts) {
-            String[] nameAndValue = assignmentPart.split("=");
-
-            String assignmentName = nameAndValue[0].trim();
-            String assignmentValue = nameAndValue[1].trim();
-
-            if (name.equals(assignmentName)) {
-                return Integer.parseInt(assignmentValue);
-            }
+    protected int eval(Map<String, Integer> variables) {
+        if (variables.containsKey(name)) {
+            return variables.get(name);
         }
 
         throw new IllegalArgumentException(

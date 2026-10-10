@@ -27,6 +27,8 @@ class NumberTest {
     void printNumber() {
         Number number = new Number(5);
 
+        assertEquals("5", number.toString());
+
         number.print();
 
         assertEquals("5", output.toString());

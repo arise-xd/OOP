@@ -1,5 +1,7 @@
 package ru.nsu.skovalev4.expression;
 
+import java.util.Map;
+
 /**
  * Represents the difference of two expressions.
  */
@@ -20,15 +22,18 @@ public class Sub extends Expression {
     }
 
     /**
-     * Prints the difference to the console.
+     * Returns the difference as a string.
+     *
+     * @return string representation of the difference
      */
     @Override
-    public void print() {
-        System.out.print("(");
-        left.print();
-        System.out.print("-");
-        right.print();
-        System.out.print(")");
+    public String toString() {
+        String result = '('
+            + left.toString()
+            + '-'
+            + right.toString()
+            + ')';
+        return result;
     }
 
     /**
@@ -45,11 +50,11 @@ public class Sub extends Expression {
     /**
      * Evaluates the difference.
      *
-     * @param assignments variable values
+     * @param variables variable values
      * @return value of the difference
      */
     @Override
-    public int eval(String assignments) {
-        return left.eval(assignments) - right.eval(assignments);
+    protected int eval(Map<String, Integer> variables) {
+        return left.eval(variables) - right.eval(variables);
     }
 }

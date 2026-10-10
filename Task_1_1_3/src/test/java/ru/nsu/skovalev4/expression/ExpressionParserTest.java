@@ -98,48 +98,83 @@ class ExpressionParserTest {
     void rejectsEmptyExpression() {
         String input = "";
         ExpressionParser parser = new ExpressionParser(input);
-        assertThrows(IllegalArgumentException.class, () -> parser.parse());
+        IllegalArgumentException exception = assertThrows(
+            IllegalArgumentException.class,
+            () -> parser.parse()
+        );
+
+        assertEquals("Expected expression at position 0", exception.getMessage());
     }
 
     @Test
     void rejectsMissingClosingParenthesis() {
         String input = "(5+2";
         ExpressionParser parser = new ExpressionParser(input);
-        assertThrows(IllegalArgumentException.class, () -> parser.parse());
+        IllegalArgumentException exception = assertThrows(
+            IllegalArgumentException.class,
+            () -> parser.parse()
+        );
+
+        assertEquals("Expected ')' at position 4", exception.getMessage());
     }
 
     @Test
     void rejectsUnknownOperator() {
         String input = "(5$2)";
         ExpressionParser parser = new ExpressionParser(input);
-        assertThrows(IllegalArgumentException.class, () -> parser.parse());
+        IllegalArgumentException exception = assertThrows(
+            IllegalArgumentException.class,
+            () -> parser.parse()
+        );
+
+        assertEquals("Unknown operator provided: $", exception.getMessage());
     }
 
     @Test
     void rejectsMissingOperator() {
         String input = "(5";
         ExpressionParser parser = new ExpressionParser(input);
-        assertThrows(IllegalArgumentException.class, () -> parser.parse());
+        IllegalArgumentException exception = assertThrows(
+            IllegalArgumentException.class,
+            () -> parser.parse()
+        );
+
+        assertEquals("Expected operator at 2", exception.getMessage());
     }
 
     @Test
     void rejectsTrailingCharacters() {
         String input = "(5+2)sss";
         ExpressionParser parser = new ExpressionParser(input);
-        assertThrows(IllegalArgumentException.class, () -> parser.parse());
+        IllegalArgumentException exception = assertThrows(
+            IllegalArgumentException.class,
+            () -> parser.parse()
+        );
+
+        assertEquals("End of the expression expected at 5", exception.getMessage());
     }
 
     @Test
     void rejectsStandaloneMinus() {
         String input = "-";
         ExpressionParser parser = new ExpressionParser(input);
-        assertThrows(IllegalArgumentException.class, () -> parser.parse());
+        IllegalArgumentException exception = assertThrows(
+            IllegalArgumentException.class,
+            () -> parser.parse()
+        );
+
+        assertEquals("Expected expression at position 0", exception.getMessage());
     }
 
     @Test
     void rejectsMinusSeparatedFromNumber() {
         String input = "- 5";
         ExpressionParser parser = new ExpressionParser(input);
-        assertThrows(IllegalArgumentException.class, () -> parser.parse());
+        IllegalArgumentException exception = assertThrows(
+            IllegalArgumentException.class,
+            () -> parser.parse()
+        );
+
+        assertEquals("Expected expression at position 0", exception.getMessage());
     }
 }

@@ -1,5 +1,7 @@
 package ru.nsu.skovalev4.expression;
 
+import java.util.Map;
+
 /**
  * Represents the quotient of two expressions.
  */
@@ -20,15 +22,18 @@ public class Div extends Expression {
     }
 
     /**
-     * Prints the quotient to the console.
+     * Returns the quotient as a string.
+     *
+     * @return string representation of the quotient
      */
     @Override
-    public void print() {
-        System.out.print("(");
-        left.print();
-        System.out.print("/");
-        right.print();
-        System.out.print(")");
+    public String toString() {
+        String result = '('
+            + left.toString()
+            + '/'
+            + right.toString()
+            + ')';
+        return result;
     }
 
     /**
@@ -51,12 +56,12 @@ public class Div extends Expression {
     /**
      * Evaluates the quotient.
      *
-     * @param assignments variable values
+     * @param variables variable values
      * @return value of the quotient
      * @throws ArithmeticException if the denominator is zero
      */
     @Override
-    public int eval(String assignments) {
-        return left.eval(assignments) / right.eval(assignments);
+    protected int eval(Map<String, Integer> variables) {
+        return left.eval(variables) / right.eval(variables);
     }
 }

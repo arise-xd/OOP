@@ -1,14 +1,14 @@
 package ru.nsu.skovalev4.expression;
 
 /**
- * Represents the parser of expression.
+ * Represents a parser of mathematical expressions.
  */
 public class ExpressionParser {
     private final String input;
     private int position;
 
     /**
-     * Creates a parser for string.
+     * Creates a parser for the specified string.
      *
      * @param input input string
      */
@@ -18,10 +18,10 @@ public class ExpressionParser {
     }
 
     /**
-     * Parse input expression.
+     * Parses the input expression.
      *
-     * @return expression
-     * @throws IllegalArgumentException if expression is invalid
+     * @return parsed expression
+     * @throws IllegalArgumentException if the expression is invalid
      */
     public Expression parse() {
         Expression expression = parseExpression();
@@ -108,17 +108,17 @@ public class ExpressionParser {
     private Expression parseOperation() {
         position++;
         skipWhitespace();
-        Expression left = parseExpression();
+        final Expression left = parseExpression();
         skipWhitespace();
         if (position >= input.length()) {
             throw new IllegalArgumentException(
                 "Expected operator at " + position
             );
         }
-        char operator = input.charAt(position);
+        final char operator = input.charAt(position);
         position++;
         skipWhitespace();
-        Expression right = parseExpression();
+        final Expression right = parseExpression();
         skipWhitespace();
 
         if (position >= input.length() || input.charAt(position) != ')') {

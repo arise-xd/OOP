@@ -27,6 +27,8 @@ class AddTest {
     void printsAddition() {
         Add add = new Add(new Number(3), new Variable("x"));
 
+        assertEquals("(3+x)", add.toString());
+
         add.print();
 
         assertEquals("(3+x)", output.toString());
@@ -38,6 +40,8 @@ class AddTest {
             new Add(new Number(3), new Variable("x")),
             new Number(7)
         );
+
+        assertEquals("((3+x)+7)", add.toString());
 
         add.print();
 
@@ -56,6 +60,8 @@ class AddTest {
     @Test
     void differentiatesAddition() {
         Add add = new Add(new Variable("x"), new Variable("x"));
+
+        assertEquals("(x+x)", add.toString());
 
         Expression derivativeResult = add.derivative("x");
 

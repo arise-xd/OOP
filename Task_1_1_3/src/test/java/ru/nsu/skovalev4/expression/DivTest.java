@@ -28,6 +28,8 @@ class DivTest {
     void printsDivision() {
         Div div = new Div(new Number(3), new Variable("x"));
 
+        assertEquals("(3/x)", div.toString());
+
         div.print();
 
         assertEquals("(3/x)", output.toString());
@@ -39,6 +41,8 @@ class DivTest {
             new Div(new Number(3), new Variable("x")),
             new Number(7)
         );
+
+        assertEquals("((3/x)/7)", div.toString());
 
         div.print();
 
@@ -60,6 +64,8 @@ class DivTest {
             new Mul(new Variable("x"), new Variable("x")),
             new Variable("x")
         );
+
+        assertEquals("((x*x)/x)", div.toString());
 
         Expression derivativeResult = div.derivative("x");
 

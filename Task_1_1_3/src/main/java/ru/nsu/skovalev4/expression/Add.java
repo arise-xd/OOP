@@ -1,5 +1,7 @@
 package ru.nsu.skovalev4.expression;
 
+import java.util.Map;
+
 /**
  * Represents the sum of two expressions.
  */
@@ -20,15 +22,18 @@ public class Add extends Expression {
     }
 
     /**
-     * Prints the sum to the console.
+     * Returns the sum as a string.
+     *
+     * @return string representation of the sum
      */
     @Override
-    public void print() {
-        System.out.print("(");
-        left.print();
-        System.out.print("+");
-        right.print();
-        System.out.print(")");
+    public String toString() {
+        String result = '('
+            + left.toString()
+            + '+'
+            + right.toString()
+            + ')';
+        return result;
     }
 
     /**
@@ -45,11 +50,11 @@ public class Add extends Expression {
     /**
      * Evaluates the sum.
      *
-     * @param assignments variable values
+     * @param variables variable values
      * @return value of the sum
      */
     @Override
-    public int eval(String assignments) {
-        return left.eval(assignments) + right.eval(assignments);
+    protected int eval(Map<String, Integer> variables) {
+        return left.eval(variables) + right.eval(variables);
     }
 }

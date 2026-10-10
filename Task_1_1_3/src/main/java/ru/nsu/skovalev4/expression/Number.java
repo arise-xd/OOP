@@ -1,5 +1,7 @@
 package ru.nsu.skovalev4.expression;
 
+import java.util.Map;
+
 /**
  * Represents a constant number.
  */
@@ -17,11 +19,13 @@ public class Number extends Expression {
     }
 
     /**
-     * Prints the number to the console.
+     * Returns the number as a string.
+     *
+     * @return string representation of the number
      */
     @Override
-    public void print() {
-        System.out.print(value);
+    public String toString() {
+        return Integer.toString(value);
     }
 
     /**
@@ -38,11 +42,11 @@ public class Number extends Expression {
     /**
      * Returns the value of the number.
      *
-     * @param assignments variable values
+     * @param variables variable values
      * @return value of the number
      */
     @Override
-    public int eval(String assignments) {
+    protected int eval(Map<String, Integer> variables) {
         return value;
     }
 }

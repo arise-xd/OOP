@@ -28,6 +28,7 @@ class VariableTest {
     void printsName() {
         Variable variable = new Variable("x");
 
+        assertEquals("x", variable.toString());
         variable.print();
 
         assertEquals("x", output.toString());
