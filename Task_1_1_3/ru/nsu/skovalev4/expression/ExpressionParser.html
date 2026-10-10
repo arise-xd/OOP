@@ -76,7 +76,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">ExpressionParser</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
-<div class="block">Represents the parser of expression.</div>
+<div class="block">Represents a parser of mathematical expressions.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -90,7 +90,7 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.String)" class="member-name-link">ExpressionParser</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;input)</code></div>
 <div class="col-last even-row-color">
-<div class="block">Creates a parser for string.</div>
+<div class="block">Creates a parser for the specified string.</div>
 </div>
 </div>
 </section>
@@ -109,7 +109,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Expression.html" title="class in ru.nsu.skovalev4.expression">Expression</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#parse()" class="member-name-link">parse</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Parse input expression.</div>
+<div class="block">Parses the input expression.</div>
 </div>
 </div>
 </div>
@@ -132,7 +132,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="&lt;init&gt;(java.lang.String)">
 <h3>ExpressionParser</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ExpressionParser</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;input)</span></div>
-<div class="block">Creates a parser for string.</div>
+<div class="block">Creates a parser for the specified string.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>input</code> - input string</dd>
@@ -151,12 +151,12 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="parse()">
 <h3>parse</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Expression.html" title="class in ru.nsu.skovalev4.expression">Expression</a></span>&nbsp;<span class="element-name">parse</span>()</div>
-<div class="block">Parse input expression.</div>
+<div class="block">Parses the input expression.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>expression</dd>
+<dd>parsed expression</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - if expression is invalid</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - if the expression is invalid</dd>
 </dl>
 </section>
 </li>
