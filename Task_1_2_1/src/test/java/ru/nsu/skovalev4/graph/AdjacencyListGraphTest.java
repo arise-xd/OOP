@@ -1,10 +1,13 @@
 package ru.nsu.skovalev4.graph;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 class AdjacencyListGraphTest {
 
@@ -86,7 +89,7 @@ class AdjacencyListGraphTest {
         adjacencyGraph.addVertex(10);
         adjacencyGraph.addVertex(20);
         assertTrue(adjacencyGraph.addEdge(10, 20));
-        assertFalse(adjacencyGraph.addEdge(10,20));
+        assertFalse(adjacencyGraph.addEdge(10, 20));
     }
 
     @Test
