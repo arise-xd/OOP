@@ -1,1 +1,1 @@
-typeSearchIndex = [{"p":"ru.nsu.skovalev4.graph","l":"AdjacencyListGraph"},{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"ru.nsu.skovalev4.graph","l":"Graph"},{"p":"ru.nsu.skovalev4.graph","l":"Main"}];updateSearchResults();
+typeSearchIndex = [{"p":"ru.nsu.skovalev4.graph","l":"AdjacencyListGraph"},{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"ru.nsu.skovalev4.graph","l":"Graph"}];updateSearchResults();
