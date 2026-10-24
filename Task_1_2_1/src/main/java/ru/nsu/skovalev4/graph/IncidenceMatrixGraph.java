@@ -192,6 +192,21 @@ public class IncidenceMatrixGraph<V> implements Graph<V> {
         return List.copyOf(vertexIndices.keySet());
     }
 
+    @Override
+    public boolean equals(Object other) {
+        return GraphEquality.areEqual(this, other);
+    }
+
+    @Override
+    public int hashCode() {
+        return GraphEquality.calculateHashCode(this);
+    }
+
+    @Override
+    public String toString() {
+        return GraphFormatter.format(this);
+    }
+
     private int findEdgeColumn(int fromIndex, int toIndex) {
         for (int column = 0; column < edgeCount; column++) {
             if (matrix.get(fromIndex).get(column) == -1
@@ -200,10 +215,5 @@ public class IncidenceMatrixGraph<V> implements Graph<V> {
             }
         }
         return -1;
-    }
-
-    @Override
-    public String toString() {
-        return GraphFormatter.format(this);
     }
 }

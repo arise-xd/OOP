@@ -168,6 +168,16 @@ public class AdjacencyMatrixGraph<V> implements Graph<V> {
     }
 
     @Override
+    public boolean equals(Object other) {
+        return GraphEquality.areEqual(this, other);
+    }
+
+    @Override
+    public int hashCode() {
+        return GraphEquality.calculateHashCode(this);
+    }
+
+    @Override
     public String toString() {
         return GraphFormatter.format(this);
     }
