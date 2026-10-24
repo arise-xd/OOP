@@ -76,6 +76,9 @@ abstract class AbstractGraphTest {
         graph.addVertex(30);
         assertTrue(graph.addEdge(10, 30));
         assertTrue(graph.addEdge(10, 20));
+        assertTrue(graph.addVertex(40));
+        assertEquals(List.of(10, 20, 30, 40), graph.getVertices());
+        assertEquals(List.of(), graph.getNeighbours(40));
         assertEquals(List.of(20, 30), graph.getNeighbours(10));
         assertEquals(List.of(), graph.getNeighbours(20));
         assertThrows(
@@ -156,12 +159,14 @@ abstract class AbstractGraphTest {
         graph.addVertex(10);
         graph.addVertex(20);
         graph.addVertex(30);
+        graph.addVertex(40);
         graph.addEdge(10, 20);
         graph.addEdge(20, 30);
         graph.addEdge(30, 20);
+        graph.addEdge(10, 40);
         assertTrue(graph.removeVertex(20));
-        assertEquals(List.of(10, 30), graph.getVertices());
-        assertEquals(List.of(), graph.getNeighbours(10));
+        assertEquals(List.of(10, 30, 40), graph.getVertices());
+        assertEquals(List.of(40), graph.getNeighbours(10));
         assertEquals(List.of(), graph.getNeighbours(30));
         assertThrows(
             IllegalArgumentException.class,
