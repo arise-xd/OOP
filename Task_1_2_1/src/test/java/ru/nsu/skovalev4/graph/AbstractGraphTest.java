@@ -206,4 +206,38 @@ abstract class AbstractGraphTest {
             10 30
             20 30""", graph.toString());
     }
+
+    @Test
+    void topologicalSortReturnsVerticesInOrder() {
+        Graph<Integer> graph = createGraph();
+        assertEquals(List.of(), TopologicalSorter.sort(graph));
+
+        graph.addVertex(10);
+        graph.addVertex(20);
+        graph.addVertex(30);
+        graph.addVertex(40);
+        graph.addVertex(50);
+        graph.addEdge(10, 30);
+        graph.addEdge(20, 30);
+        graph.addEdge(30, 40);
+
+        List<Integer> sortedVertices = TopologicalSorter.sort(graph);
+        assertEquals(List.of(10, 20, 50, 30, 40), sortedVertices);
+        assertThrows(UnsupportedOperationException.class,
+            () -> sortedVertices.clear());
+    }
+
+    @Test
+    void topologicalSortRejectsCycle() {
+        Graph<Integer> graph = createGraph();
+        graph.addVertex(10);
+        graph.addVertex(20);
+        graph.addVertex(30);
+        graph.addEdge(10, 20);
+        graph.addEdge(20, 30);
+        graph.addEdge(30, 10);
+
+        assertThrows(IllegalStateException.class,
+            () -> TopologicalSorter.sort(graph));
+    }
 }
