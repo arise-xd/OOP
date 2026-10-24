@@ -201,4 +201,9 @@ public class IncidenceMatrixGraph<V> implements Graph<V> {
         }
         return -1;
     }
+
+    @Override
+    public String toString() {
+        return GraphFormatter.format(this);
+    }
 }

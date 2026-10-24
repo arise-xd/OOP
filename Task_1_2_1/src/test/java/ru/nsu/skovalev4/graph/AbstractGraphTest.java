@@ -184,4 +184,26 @@ abstract class AbstractGraphTest {
         assertFalse(graph.removeVertex(67));
         assertEquals(List.of(10, 20, 30), graph.getVertices());
     }
+
+    @Test
+    void printEmptyAndFilledGraph() {
+        Graph<Integer> graph = createGraph();
+        assertEquals("0 0", graph.toString());
+
+        graph.addVertex(10);
+        graph.addVertex(20);
+        graph.addVertex(30);
+        graph.addEdge(10, 30);
+        graph.addEdge(10, 20);
+        graph.addEdge(20, 30);
+
+        assertEquals("""
+            3 3
+            10
+            20
+            30
+            10 20
+            10 30
+            20 30""", graph.toString());
+    }
 }

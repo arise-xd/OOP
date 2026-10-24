@@ -136,4 +136,9 @@ public class AdjacencyListGraph<V> implements Graph<V> {
     public List<V> getVertices() {
         return List.copyOf(adjacency.keySet());
     }
+
+    @Override
+    public String toString() {
+        return GraphFormatter.format(this);
+    }
 }

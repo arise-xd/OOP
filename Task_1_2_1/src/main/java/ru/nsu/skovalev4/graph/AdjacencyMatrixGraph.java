@@ -166,4 +166,9 @@ public class AdjacencyMatrixGraph<V> implements Graph<V> {
     public List<V> getVertices() {
         return List.copyOf(vertexIndices.keySet());
     }
+
+    @Override
+    public String toString() {
+        return GraphFormatter.format(this);
+    }
 }
