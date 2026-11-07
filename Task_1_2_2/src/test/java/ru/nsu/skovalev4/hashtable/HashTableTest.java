@@ -107,7 +107,7 @@ class HashTableTest {
         for (KeyValuePair<Integer, String> pair : table) {
             actualPairs.add(pair);
         }
-        Set<KeyValuePair<Integer, String>> expectedPairs = Set.of(
+        final Set<KeyValuePair<Integer, String>> expectedPairs = Set.of(
             new KeyValuePair<>(1, "one"),
             new KeyValuePair<>(17, "seventeen"),
             new KeyValuePair<>(null, "null-key")
