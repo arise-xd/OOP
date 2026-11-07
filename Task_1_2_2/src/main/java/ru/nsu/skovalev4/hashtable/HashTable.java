@@ -1,13 +1,17 @@
 package ru.nsu.skovalev4.hashtable;
 
+import java.util.ConcurrentModificationException;
+import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 
-public class HashTable<K, V> {
+public class HashTable<K, V>
+    implements Iterable<KeyValuePair<K, V>> {
     private static final int DEFAULT_CAPACITY = 16;
     private static final double LOAD_FACTOR = 0.75;
     private Node<K, V>[] buckets;
     private int size;
+    private int modificationCount = 0;
 
     private static class Node<K, V> {
         private final K key;
@@ -62,6 +66,7 @@ public class HashTable<K, V> {
         newNode.next = buckets[index];
         buckets[index] = newNode;
         size++;
+        modificationCount++;
     }
 
     public boolean containsKey(K key) {
@@ -99,6 +104,7 @@ public class HashTable<K, V> {
                 }
 
                 size--;
+                modificationCount++;
                 return current.value;
             }
 
@@ -141,5 +147,58 @@ public class HashTable<K, V> {
                 current = next;
             }
         }
+    }
+
+    private class HashTableIterator
+        implements Iterator<KeyValuePair<K, V>> {
+
+        private int nextBucketIndex;
+        private Node<K, V> nextNode;
+        private final int iteratorModificationCount;
+
+        private HashTableIterator() {
+            iteratorModificationCount = modificationCount;
+            moveToNextBucket();
+        }
+
+        @Override
+        public boolean hasNext() {
+            checkConcurrentModification();
+            return nextNode != null;
+        }
+
+        @Override
+        public KeyValuePair<K, V> next() {
+            checkConcurrentModification();
+            if (nextNode == null) {
+                throw new NoSuchElementException("No more elements");
+            }
+
+            Node<K, V> nodeToReturn = nextNode;
+            nextNode = nextNode.next;
+            if (nextNode == null) {
+                moveToNextBucket();
+            }
+
+            return new KeyValuePair<>(nodeToReturn.key, nodeToReturn.value);
+        }
+
+        private void checkConcurrentModification() {
+            if (iteratorModificationCount != modificationCount) {
+                throw new ConcurrentModificationException();
+            }
+        }
+
+        private void moveToNextBucket() {
+            while (nextNode == null && nextBucketIndex < buckets.length) {
+                nextNode = buckets[nextBucketIndex];
+                nextBucketIndex++;
+            }
+        }
+    }
+
+    @Override
+    public Iterator<KeyValuePair<K, V>> iterator() {
+        return new HashTableIterator();
     }
 }
