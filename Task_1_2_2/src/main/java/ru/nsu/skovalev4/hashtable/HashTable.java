@@ -5,6 +5,7 @@ import java.util.Objects;
 
 public class HashTable<K, V> {
     private static final int DEFAULT_CAPACITY = 16;
+    private static final double LOAD_FACTOR = 0.75;
     private Node<K, V>[] buckets;
     private int size;
 
@@ -47,12 +48,16 @@ public class HashTable<K, V> {
     }
 
     public void put(K key, V value) {
-        int index = bucketIndex(key);
 
         if (findNode(key) != null) {
             throw new IllegalArgumentException("Key already exists");
         }
 
+        if (size + 1 > buckets.length * LOAD_FACTOR) {
+            resize();
+        }
+
+        int index = bucketIndex(key);
         Node<K, V> newNode = new Node<>(key, value);
         newNode.next = buckets[index];
         buckets[index] = newNode;
@@ -116,6 +121,25 @@ public class HashTable<K, V> {
         }
 
         return null;
+    }
 
+    @SuppressWarnings("unchecked")
+    private void resize() {
+        Node<K, V>[] oldBuckets = buckets;
+        buckets = new Node[oldBuckets.length * 2];
+
+        for (Node<K, V> oldBucket : oldBuckets) {
+            Node<K, V> current = oldBucket;
+
+            while (current != null) {
+                Node<K, V> next = current.next;
+
+                int newIndex = bucketIndex(current.key);
+                current.next = buckets[newIndex];
+                buckets[newIndex] = current;
+
+                current = next;
+            }
+        }
     }
 }
