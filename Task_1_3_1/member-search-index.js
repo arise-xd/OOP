@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"ru.nsu.skovalev4.substring","c":"Substring","l":"find(Path)","u":"find(java.nio.file.Path)"},{"p":"ru.nsu.skovalev4.substring","c":"Substring","l":"Substring(String)","u":"%3Cinit%3E(java.lang.String)","k":"3"}];updateSearchResults();
