@@ -73,8 +73,8 @@ class SubstringTest {
     @Test
     void findsPatternInGeneratedLargeFile() throws IOException {
         Path file = tempDir.resolve("large.txt");
-        String block = "x".repeat(10_000);
-        int blockCount = 1_000;
+        String block = "x".repeat(8192);
+        int blockCount = 8192;
 
         try (var writer =
                  Files.newBufferedWriter(file, StandardCharsets.UTF_8)) {
